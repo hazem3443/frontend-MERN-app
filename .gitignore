@@ -25,3 +25,7 @@ yarn-error.log*
 #front-end git Repo
 /backend
 
+#swap files
+*.swn
+*.swp
+*.swo
