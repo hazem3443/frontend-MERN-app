@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class CreateExercise extends Component {
   constructor(props){
@@ -63,9 +64,10 @@ export default class CreateExercise extends Component {
     .then(res => console.log(res.data))
     .catch(err => console.log("Error"+err));
     e.preventDefault();
-    
-    window.location.replace('/');
 
+
+    document.getElementById('link-redirect').click();
+    // window.location.replace('/');
     // window.location = '/'; //redirect to home page
   }
 
@@ -120,7 +122,8 @@ export default class CreateExercise extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create Exercise Log" className="btn btn-primary" />
+        <input type="submit" value="Create Exercise Log" className="btn btn-primary"/>
+        <Link id='link-redirect' to='/'>sw</Link>
         </div>
       </form>
     </div> 
