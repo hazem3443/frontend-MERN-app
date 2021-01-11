@@ -49,7 +49,7 @@ export default class CreateExercise extends Component {
   }
 
   onSubmit(e){
-    e.preventDefault();
+    // e.preventDefault();
 
     const exercise = {
       username :this.state.fields["username"],
@@ -58,11 +58,14 @@ export default class CreateExercise extends Component {
       date :this.state.fields["date"]
     }
 
-    // console.log(exercise);
     //to be submitted to database
     axios.post('http://localhost:5000/exercises/add', exercise)
     .then(res => console.log(res.data))
     .catch(err => console.log("Error"+err));
+    e.preventDefault();
+    
+    window.location.replace('/');
+
     // window.location = '/'; //redirect to home page
   }
 
@@ -70,7 +73,7 @@ export default class CreateExercise extends Component {
     return ( 
       <div>
       <h3>Create New Exercise Log</h3>
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <form onSubmit={this.onSubmit.bind(this)} >
         <div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
