@@ -30,7 +30,8 @@ class CreateUsers extends Component {
     .then(res => console.log(res.data))
     .catch(err => console.log("Error"+err));
     //to be submitted to database
-    window.location = '/'; //redirect to home page
+    this.props.history.replace('/');//redirect to home page
+    // window.location = '/';
   }
   render() { 
     return ( <div>

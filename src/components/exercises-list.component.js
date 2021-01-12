@@ -18,7 +18,7 @@ const Exercise = props => (
 export default class ExercisesList extends Component {
   constructor(props){
     super(props);
-
+    
     this.deleteExercise = this.deleteExercise.bind(this)    
     
     this.state = {exercises: []};

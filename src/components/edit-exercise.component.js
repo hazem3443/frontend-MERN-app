@@ -59,7 +59,7 @@ export default class EditExercise extends Component {
     //   })
   }
 
-  onSubmit(e){
+  onSubmit=(e)=>{
     e.preventDefault();
     
     const exercise = {
@@ -74,15 +74,15 @@ export default class EditExercise extends Component {
     .then(res => console.log(res.data))
     .catch(err => console.log("Error"+err));
 
-    window.location.replace('/');
-    // window.location = '/'; //redirect to home page
+    this.props.history.replace('/');//redirect to home page
+    // window.location = '/'; 
   }
 
   render() { 
     return ( 
       <div>
       <h3>Edit Exercise Log</h3>
-      <form onSubmit={this.onSubmit.bind(this)}>
+      <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
